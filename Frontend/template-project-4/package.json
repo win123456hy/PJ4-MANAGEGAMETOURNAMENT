@@ -1,0 +1,23 @@
+{
+  "name": "template-project-4",
+  "version": "1.0.0",
+  "description": "My scrumtrulescent Nuxt.js project",
+  "author": "chinh12hy",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "iview": "^3.5.3",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "nuxt": "^2.0.0",
+    "view-design": "^4.0.2"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2"
+  }
+}

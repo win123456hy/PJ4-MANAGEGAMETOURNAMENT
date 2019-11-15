@@ -1,0 +1,137 @@
+#live-stream {
+  width: 1200px;
+  margin: 0 auto;
+
+  .live-stream-inner {
+    .flex-column();
+    .middle();
+    padding: 65px 0;
+
+    .section-separator {
+      width: 100%;
+      .flex-row();
+      .center();
+      padding: 20px 0 50px 0;
+    }
+
+    .tabs-live-stream {
+      width: 100%;
+    }
+
+    .tab-container {
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background-color: rgba(15,15,15,.8);
+
+      [id^="tab"]:checked + label {
+        background-color: #ff0e1f;
+      }
+
+      label {
+        font-weight: 700;
+        font-size: 18px;
+        display: block;
+        float: left;
+        cursor: pointer;
+        text-decoration: none;
+        transform: skew(20deg);
+        transform-origin: 0 100%;
+        transition: background-color 1s cubic-bezier(.19,1,.22,1);
+
+        &:hover {
+          background-color: #ff0e1f;
+        }
+
+        span {
+          padding: 12px 47px;
+          color: #ffffff;
+          text-align: center;
+          transform: skew(-20deg);
+          display: inline-block;
+        }
+      }
+
+      input, section {
+        clear: both;
+        display: none;
+      }
+
+      #tab_youtube:checked ~ #content-youtube,
+      #tab_twitch:checked ~ #content-twitch,
+      #tab_mixer:checked ~ #content-mixer {
+        display: block;
+        background: #fff;
+        color: #999;
+      }
+    }
+  }
+
+  //Tab
+  .tab-images-inner {
+    .tab-image {
+      overflow: hidden;
+      img {
+        transition: .35s;
+      }
+    }
+    &:hover {
+      .tab-title {
+        padding-left: 30px;
+
+        &:after {
+          left: 0 !important;
+          opacity: 1 !important;
+        }
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    .tab-content {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(15,15,15,.8);
+      padding: 24px 100px 26px 30px;
+
+      .tab-title {
+        font-size: 20px;
+        font-weight: 700;
+        position: relative;
+        transition: all .3s ease;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: calc(50% - 1px);
+          height: 3px;
+          width: 18px;
+          left: -30px;
+          background-color: #ff0e1f;
+          opacity: 0;
+          transition: all .3s ease;
+          transform: skewX(15deg);
+        }
+      }
+
+      .tag-content {
+        .flex-row();
+        .middle();
+      }
+    }
+
+    .video-button-play {
+      color: #fff;
+      font-size: 64px;
+      line-height: 1;
+      background-color: transparent;
+      text-align: center;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+}

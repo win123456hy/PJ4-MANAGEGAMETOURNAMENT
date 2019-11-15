@@ -1,0 +1,208 @@
+.main-menu {
+  position: relative;
+  z-index: 9;
+  padding: 0 67px;
+  background-color: #17161a;
+
+  .list-icon-contact {
+    .flex-row();
+    .middle();
+
+    .ivu-icon {
+      margin: 0 7px;
+      cursor: pointer;
+
+      &:hover {
+        color: #ff0e1f;
+      }
+    }
+  }
+
+  .menu-area {
+    .flex-row();
+    height: 120px;
+    //box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.35);
+
+    .menu-position-left-inner {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      padding: 0 40px 0 70px;
+
+      .menu-position-left-inner-border-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 105%;
+        height: 100%;
+        border-left: 1px solid rgba(203,203,203,.1);
+        -webkit-transform: skewX(15deg);
+        -moz-transform: skewX(15deg);
+        transform: skewX(15deg);
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 37%;
+          width: 100%;
+          border-bottom: 1px solid rgba(203,203,203,.1);
+        }
+      }
+    }
+
+    .menu-position-right {
+
+      .menu-position-right-inner-border-holder {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 105%;
+        height: 100%;
+        border-right: 1px solid rgba(203,203,203,.1);
+        -webkit-transform: skewX(-15deg);
+        -moz-transform: skewX(-15deg);
+        transform: skewX(-15deg);
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 37%;
+          width: 100%;
+          border-bottom: 1px solid rgba(203,203,203,.1);
+        }
+      }
+    }
+
+    .menu-position-left,
+    .menu-position-left,.menu-position-right {
+      width: 580px;
+      .flex-row();
+
+      .menu-position-left-top {
+        padding-left: 30px;
+        .flex-row();
+        .middle();
+      }
+
+      nav {
+        width: auto;
+        margin: 0;
+        height: 100%;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+        }
+      }
+    }
+
+    .menu-position-center-inner {
+      height: calc(100% + 10px);
+      -webkit-clip-path: polygon(0 0,100% 0,81% 100%,19% 100%);
+      clip-path: polygon(0 0,100% 0,81% 100%,19% 100%);
+      vertical-align: middle;
+      display: inline-block;
+      z-index: 9;
+    }
+  }
+}
+
+.menu-position-left-top {
+  .flex-row();
+}
+
+.menu-device li {
+  position: relative;
+  //height: 40px;
+  margin: 0 4px;
+
+  &:hover a {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.menu-device li a{
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  color: #fff;
+  font-weight: 900;
+  line-height: 23px;
+  box-sizing: border-box;
+  font-size: 14px;
+  letter-spacing: .06em;
+  .flex-row();
+  .middle();
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #ff0e1f;
+    opacity: 0;
+    -webkit-transition: opacity 1s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: opacity 1s cubic-bezier(.645,.045,.355,1);
+    transition: opacity 1s cubic-bezier(.645,.045,.355,1);
+    -webkit-transform: skewX(15deg);
+    -moz-transform: skewX(15deg);
+    transform: skewX(15deg);
+  }
+}
+
+.menu-position-left-top {
+  height: 37%;
+  font-size: 13px;
+
+}
+
+.menu-position-left-bottom {
+  height: 63%;
+  .flex-row();
+  .middle();
+}
+
+.menu-position-center-inner {
+  background-image: url(https://playerx.edge-themes.com/wp-content/uploads/2018/06/logo-background-img.jpg);
+  height: calc(100% + 10px);
+  -webkit-clip-path: polygon(0 0,100% 0,81% 100%,19% 100%);
+  clip-path: polygon(0 0,100% 0,81% 100%,19% 100%);
+
+  .logo-wrapper {
+    height: 100%;
+    .flex-row();
+    .middle();
+
+    a {
+      padding: 0 80px;
+      max-height: 90px;
+      top: calc(50% - 5px);
+      display: inline-block;
+
+      img {
+        margin: 0 auto;
+        -webkit-transition: opacity .2s ease;
+        -moz-transition: opacity .2s ease;
+        transition: opacity .2s ease;
+      }
+    }
+  }
+}
+
+.slide-menu-button {
+  svg {
+    transition: .25s;
+
+    &:hover {
+      transform: rotate(-90deg);
+    }
+  }
+}
+

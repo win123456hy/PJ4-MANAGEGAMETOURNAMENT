@@ -1,0 +1,165 @@
+.matches-inner {
+  .flex-column();
+  .middle();
+  padding: 65px 0;
+  width: 1200px;
+  margin: 0 auto;
+
+  .section-separator {
+    width: 100%;
+    .flex-row();
+    .center();
+    padding: 20px 0 50px 0;
+  }
+
+  .tabs-live-stream {
+    width: 100%;
+  }
+
+  .tab-container {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    background-color: rgba(15,15,15,.8);
+
+    [id^="tab"]:checked + label {
+      background-color: #ff0e1f;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 18px;
+      display: block;
+      float: left;
+      cursor: pointer;
+      text-decoration: none;
+      transform: skew(20deg);
+      transform-origin: 0 100%;
+      transition: background-color 1s cubic-bezier(.19,1,.22,1);
+
+      &:hover {
+        background-color: #ff0e1f;
+      }
+
+      span {
+        padding: 12px 47px;
+        color: #ffffff;
+        text-align: center;
+        transform: skew(-20deg);
+        display: inline-block;
+      }
+    }
+
+    input, section {
+      clear: both;
+      display: none;
+    }
+
+    #tab_all_matches:checked ~ #content_all_matches,
+    #tab_upcoming:checked ~ #content_upcoming,
+    #tab_latest_results:checked ~ #content_latest_results {
+      display: block;
+      background: #fff;
+      color: #999;
+    }
+  }
+}
+
+.matches-tab-item {
+  //background-color: rgba(15,15,15,.8);
+  background: #0d0d0d;
+  .match-item-holder {
+    display: table;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #0d0d0d;
+      background: linear-gradient(to right,rgba(15,15,15,.8) 0,#540e0f 50%,rgba(15,15,15,.8) 100%);
+      opacity: 0;
+      transition: .6s cubic-bezier(.645,.045,.355,1);
+    }
+
+    .item-holder {
+      position: relative;
+    }
+  }
+
+  .matches-status-played {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    vertical-align: middle;
+    padding: 26px 90px 35px 60px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+
+    .item-holder {
+      > * {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .match-link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 40;
+        top: 0;
+        left: 0;
+      }
+
+      .matches-singer-team {
+        width: 124px;
+        position: relative;
+        z-index: 30;
+        text-align: center;
+
+        .match-team-title {
+          margin: 0;
+        }
+      }
+
+      .match-vs-image {
+        width: 55px;
+        position: relative;
+        z-index: 20;
+        text-align: center;
+        padding: 0 20px 0;
+        box-sizing: initial;
+      }
+
+      .match-info {
+        padding: 0 130px;
+        position: relative;
+        z-index: 20;
+
+        .match-title {
+          margin: 0;
+          padding: 5px 0;
+        }
+      }
+
+      .watch-stream-holder {
+        position: relative;
+        z-index: 45;
+        text-align: right;
+        padding: 0 30px;
+        font-size: 13px;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
